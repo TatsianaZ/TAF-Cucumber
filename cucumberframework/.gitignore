@@ -1,0 +1,16 @@
+/target/
+
+# Gradle config and artifacts files
+.gradle/
+build
+
+# JetBrains config files
+.idea/
+*.iml
+
+# Eclipse config files
+.project
+.classpath
+.metadata
+.settings/
+
