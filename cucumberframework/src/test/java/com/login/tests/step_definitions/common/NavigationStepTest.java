@@ -12,6 +12,8 @@ public class NavigationStepTest {
 
     @Given("^user navigates to Facebook$")
     public void navigateToFacebook(){
+        String driverPath = System.getProperty("basedir");
+        System.out.println("driverPath: " + driverPath);
         commonLoginNavigation.navigateToFacebook();
     }
 

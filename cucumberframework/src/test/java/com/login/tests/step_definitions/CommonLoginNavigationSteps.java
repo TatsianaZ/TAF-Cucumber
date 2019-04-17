@@ -13,8 +13,4 @@ public class CommonLoginNavigationSteps extends BaseCommonLoginNavigation {
 		super.gmailUserIsLoggedIn(userName.get("userName"));
 	}
 
-	@Given("^Gmail user navigates to Facebook$")
-	public void userNavigatesToFacebook() {
-	}
-
 }

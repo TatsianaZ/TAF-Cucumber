@@ -1,4 +1,4 @@
-Feature: As a user I can login gmail
+Feature: As a user I can login facebook
 
   @now
   Scenario:
