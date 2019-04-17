@@ -94,6 +94,8 @@ public class WebDriverDiscovery extends EventFiringWebDriver {
 						WebDriver driver = new ChromeDriver(options);
 						driver.manage().window().maximize();
 						driver.get("https://google.com");
+						System.out.println("after get");
+						driver.quit();
 					}
 
 					System.out.println("22222222222");
