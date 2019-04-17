@@ -21,6 +21,7 @@ public class WebDriverDiscovery extends EventFiringWebDriver {
 
 	private static final Map<String, String> browserMap = Collections.unmodifiableMap(new HashMap<String, String>() {
 		{
+			System.out.println("browserMap");
 			put("chrome", "org.openqa.selenium.chrome.ChromeDriver");
 			put("firefox", "org.openqa.selenium.firefox.FirefoxDriver");
 			put("safari", "org.openqa.selenium.safari.SafariDriver");
@@ -65,22 +66,31 @@ public class WebDriverDiscovery extends EventFiringWebDriver {
 			LOG.warn("Empty value of driverType system property");
 		}
 		LOG.info("DRIVER_TYPE: " + driverType);
+		System.out.println("driverType: " + driverType);
 
 		String localBrowserType = browserMap.get(driverType);
-		if (null != (localBrowserType)) {
 
+		System.out.println("after get method");
+
+		if (null != (localBrowserType)) {
+			System.out.println("111");
 			Class<?> retrievedClass = null;
 			try {
 				retrievedClass = Class.forName(localBrowserType);
+				System.out.println("retrievedClass");
 			} catch (ClassNotFoundException e) {
 			}
 			if (retrievedClass.getSuperclass().equals(RemoteWebDriver.class)) {
 				try {
+					System.out.println("11111111111");
 					remoteWebDriver = (RemoteWebDriver) retrievedClass.newInstance();
+					System.out.println("22222222222");
 				} catch (InstantiationException e) {
 				} catch (IllegalAccessException e) {
 				}
+				System.out.println("3333333333333");
 				remoteWebDriver.manage().window().maximize();
+				System.out.println("444444444444");
 			} else {
 				throw new IllegalArgumentException("driverType must extend");
 			}
