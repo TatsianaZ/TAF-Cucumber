@@ -56,6 +56,9 @@ public class WebDriverDiscovery extends EventFiringWebDriver {
 	}
 
 	static {
+		String driverPath = System.getProperty("basedir");
+		System.out.println("driverPath: " + driverPath);
+
 		String driverType = System.getProperty("driverType");
 		if (StringUtils.isEmpty(driverType)) {
 			driverType = "firefox";
