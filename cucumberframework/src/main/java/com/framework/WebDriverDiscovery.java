@@ -2,6 +2,9 @@ package com.framework;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
@@ -84,6 +87,15 @@ public class WebDriverDiscovery extends EventFiringWebDriver {
 				try {
 					System.out.println("11111111111");
 					remoteWebDriver = (RemoteWebDriver) retrievedClass.newInstance();
+
+					if(driverType.equals("chrome")){
+						ChromeOptions options = new ChromeOptions();
+						options.addArguments("--disable-features=VizDisplayCompositor");
+						WebDriver driver = new ChromeDriver(options);
+						driver.manage().window().maximize();
+						driver.get("https://google.com");
+					}
+
 					System.out.println("22222222222");
 				} catch (InstantiationException e) {
 				} catch (IllegalAccessException e) {
