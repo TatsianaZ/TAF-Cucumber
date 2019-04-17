@@ -10,7 +10,7 @@
 
 	<properties>
 		<cucumber_jvm_version>1.2.5</cucumber_jvm_version>
-		<selenium_version>2.53.1</selenium_version>
+		<selenium_version>3.141.59</selenium_version>
 		<driverType>chrome</driverType>
 		<chromeDriverPath>${basedir}\src\main\resources\drivers\chromedriver.exe</chromeDriverPath>
 		<gmail.users.xls.path>src/test/resources/GmailUsers.xlsx</gmail.users.xls.path>
